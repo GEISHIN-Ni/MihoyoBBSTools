@@ -146,6 +146,3 @@ yaml/
 
 # 日志文件
 *.log
-
-# example文件
-*.example
