@@ -105,3 +105,5 @@ competition:
     account: []
     checkin: false
     weekly: false
+captcha:
+  token: 
