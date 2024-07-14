@@ -154,15 +154,17 @@ def wecomrobot(send_title, push_message):
 
 # pushdeer
 def pushdeer(send_title, push_message):
-    http.get(
-        url=f'{cfg.get("pushdeer", "api_url")}/message/push',
-        params={
-            "pushkey": cfg.get("pushdeer", "token"),
-            "text": send_title,
-            "desp": str(push_message).replace("\r\n", "\r\n\r\n"),
-            "type": "markdown"
-        }
-    )
+    tokens = cfg.get("pushdeer", "token").split(',')
+    for token in tokens:
+        http.get(
+            url=f'{cfg.get("pushdeer", "api_url")}/message/push',
+            params={
+                "pushkey": token,
+                "text": send_title,
+                "desp": str(push_message).replace("\r\n", "\r\n\r\n"),
+                "type": "markdown"
+            }
+        )
 
 
 # 钉钉群机器人
