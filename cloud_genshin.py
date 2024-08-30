@@ -19,7 +19,7 @@ class CloudGenshin:
         }
 
     def sign_account(self) -> str:
-        ret_msg = "云原神:\r\n"
+        ret_msg = "云原神: "
         req = http.get(url=setting.cloud_genshin_sgin, headers=self.headers)
         data = req.json()
         if data['retcode'] == 0:
